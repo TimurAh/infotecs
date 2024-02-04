@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+ *{
+	margin: 0;
+	padding: 0;
+	color: aliceblue;
+	text-align: center;
+ }
+body{
+	font-family: 'Pacifico', cursive;
+	background-color: gray;
+}
+header{
+	background-color: black;
+	padding: 10px;
+	position:sticky;
+    left: 0; top: 0; /* Левый нижний угол */
+	width: 100%;
+	z-index: 2;
+} 
+footer{
+	background-color: black;
+	padding: 2px;
+	position:static;
+	z-index: 2;
+    left: 0; bottom: 0; /* Левый нижний угол */
+	width: 100%;
+}
+main{
+	padding: 10px;
+	margin: auto;
+	font-family: Georgia, serif;
+	position:relative;
+}
+#jsTable{
+	width: 100%;
+	max-width: 1200px;
+	border: solid;
+}
+
+#jsTable th{
+	padding: 10px;
+	border: solid ;
+}
+#jsTable thead th{
+	padding: 10px;
+	border: solid blue;
+}
+input{
+	padding: 15px;
+	background-color: black;
+}
+button{
+	padding: 15px;
+	background-color: black;
+}
+select{
+	padding: 15px;
+	background-color: black;
+}
