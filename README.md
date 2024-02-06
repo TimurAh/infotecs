@@ -1,70 +1,23 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Стек разработки: 
+JS, HTML, CSS (SCSS, SASS), React.
+Максимальное время на выполнение задания –  1 неделя.
+Задание: Необходимо разработать приложение, которое отображает таблицу с информацией о пользователях, с возможностью поиска по всей таблице. В таблице должны быть следующие колонки: ФИО, возраст, пол, номер телефона и адрес (город и название улицы). 
+Основные цели: 
+●	Описание, используемых в задании, HTTP-запросов можно найти на ресурсе https://dummyjson.com/docs/users.
+●	Реализуйте, указанную в задании, таблицу при помощи запроса https://dummyjson.com/users.
+●	Добавьте input-компонент поиска информации из колонок по всей таблице с помощью запроса https://dummyjson.com/users/filter.
+●	Ширина таблицы – 100% от экрана пользователя, но не более 1200px.
+●	Для работы с HTTP-запросами допустимо использовать только FetchAPI.
 
-In the project directory, you can run:
+Дополнительные цели:
+●	Добавьте возможность сортировки элементов таблицы для колонок с ФИО, возрастом, полом и адресом. Сортировка должна иметь три состояния: по возрастанию, по убыванию, без сортировки. 
+●	Добавьте возможность изменения ширины каждой колонки таблицы. Минимальная ширина столбца при такой возможность должна быть равна 50px.
+●	Реализуйте обработку возможных ошибок при работе с HTTP-запросами.
+●	Добавьте отображение модального окна с подробной информацией о пользователе по клику на строку таблицы. В окне выведите следующую информацию: ФИО, возраст, адрес (город и название улицы), рост, вес, номер телефона и email-адрес.
 
-### `npm start`
+Задание нужно выполнить, используя React версии 16.8 и выше. Уделите внимание архитектуре вашего приложения (можно воспользоваться паттернами Flux, MVC, MVP, MVVM или любыми другими, которые Вам знакомы и уместны). Не используйте стандарты JS ниже, чем ES6. Комментирование кода приветствуется. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Решение задачи необходимо разместить на https://github.com, также используйте github pages для отображения вашего приложения.
+Ссылку на решение нужно вставить в файл Word и прикрепить к заявке на стажировку. 
