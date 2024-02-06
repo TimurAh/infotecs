@@ -33,7 +33,7 @@ const Table = () => {
 	const searchKeysName=[
 		["firstName","Имя"],["lastName","Фамилия"],["maidenName","Отчетсво"],["age","Возраст"],["gender","Пол"],["phone","Телефон"],["address.address","Улица"],["address.city","Город"]
 	];
-	const minCellWidth = 40;
+	const minCellWidth = 50;
 	const maxTableWidth = 1200;
 	const mouseMove = useCallback((e) => {
 		
