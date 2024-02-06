@@ -13,15 +13,15 @@ header{
 	background-color: black;
 	padding: 10px;
 	position:sticky;
-    left: 0; top: 0; /* Левый нижний угол */
+    left: 0; top: 0; /* Левый верхний угол */
 	width: 100%;
 	z-index: 2;
 } 
 footer{
 	background-color: black;
 	padding: 2px;
-	position:static;
-	z-index: 2;
+	position:sticky;
+	z-index: 1;
     left: 0; bottom: 0; /* Левый нижний угол */
 	width: 100%;
 }
@@ -32,16 +32,27 @@ main{
 	position:relative;
 }
 #jsTable{
+	
+	border-collapse: collapse;
+	display: grid;
 	width: 100%;
 	max-width: 1200px;
-	border: solid;
+
+	overflow: hidden;
+	grid-template-columns:
+    minmax(150px, 4fr)
+    minmax(150px, 1fr)
+    minmax(150px, 1fr)
+    minmax(150px, 2fr)
+    minmax(150px, 4fr);
+
 }
 
-#jsTable th{
+#jsTable td{
 	padding: 10px;
 	border: solid ;
 }
-#jsTable thead th{
+#jsTable th{
 	padding: 10px;
 	border: solid blue;
 }
@@ -56,4 +67,41 @@ button{
 select{
 	padding: 15px;
 	background-color: black;
+}
+#jsTable th span,
+#jsTable td span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+#jsTable th{
+	position: relative;
+}
+#jsTable td{
+	position: relative;
+	overflow: hidden;
+}
+#jsTable  thead,
+#jsTable  tbody,
+#jsTable  tr {
+  display: contents;
+}
+.resize-handle {
+	display: block;
+	cursor: col-resize;
+	width: 7px;
+	position: absolute;
+	right: 0;
+	top:0;
+	z-index: 1;
+	border-right: 2px solid transparent;
+}
+  
+.resize-handle:hover {
+	border-color: #05fc2e;
+}
+  
+.resize-handle.active {
+	border-color: #517ea5;
 }
