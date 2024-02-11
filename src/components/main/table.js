@@ -1,45 +1,51 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import UserOutput from "./userOutput";
+import UserInfoPage from './userInfoPage';
 
 const Table = () => {
+	//для показа всплывающего окна
+	const [activeInfoPage,setActiveInfoPage]=useState(false)
+	//для вывода информации о юзере
+	const [userForInfoPage,setUserForInfoPage] = useState(null);
+	//для вывода списка
 	const [users,setUsers] = useState([]);
+	//для поиска по таблице
 	const [searchValueParams,setSearchValueParams] = useState("");
 	const [searchKeyParams,setSearchKeyParams] = useState("firstName");
+	//для растягивания столбцов
 	const [tableHeight, setTableHeight] = useState("auto");
 	const [activeIndex, setActiveIndex] = useState(null);
 	const tableElement = useRef(null);
+	//загрузка пользователей
 	useEffect(()=>{
 		loadAllUsers();
 	},[])
-	
+	//установка метки для растягивания колонок 
 	useEffect(() => {
 		setTableHeight(tableElement.current.offsetHeight);
 
 	}, [loadAllUsers,clickButtonSearch]);
-
+	//слушатели для растягивания
 	useEffect(() => {
 		if (activeIndex !== null) {
 		  window.addEventListener('mousemove', mouseMove);
 		  window.addEventListener('mouseup', mouseUp);
-		}
-	  
+		} 
 		return () => {
 		  removeListeners();
 		}
 // eslint-disable-next-line
-	  }, [activeIndex]);
-
-	const headers = ["Фио", "Возвраст", "Пол", "Номер Телефона", "Адресс"];
-	const columns = createHeaders(headers);
-	const searchKeysName=[
-		["firstName","Имя"],["lastName","Фамилия"],["maidenName","Отчетсво"],["age","Возраст"],["gender","Пол"],["phone","Телефон"],["address.address","Улица"],["address.city","Город"]
-	];
-	const minCellWidth = 50;
-	const maxTableWidth = 1200;
+ 	}, [activeIndex]);
+	 const mouseUp = useCallback(() => {
+		setActiveIndex(null);
+		removeListeners();
+// eslint-disable-next-line
+	}, [setActiveIndex]);
+	const minCellWidth = 50;//минимальная длинна ячейки при растягиваниии
+	const maxTableWidth = 1200;//максимальная ширина таблицы
+	const headers = ["Фио", "Возвраст", "Пол", "Номер Телефона", "Адресс"];//список названия столбцов
+	const columns = createHeaders(headers);// массив стобцов с ссылками
 	const mouseMove = useCallback((e) => {
-		
-		
-		
 		const gridColumns = columns.map((col, i) => {
 		  if (i === activeIndex) {
 			let tableResizeWidth=0;
@@ -53,27 +59,24 @@ const Table = () => {
 			return `${width}px`;
 			}
 		  }
-
 		  return `${col.ref.current.offsetWidth}px`;
 		});
-	
-
 		tableElement.current.style.gridTemplateColumns =`${gridColumns.join(' ')}`;
 	}, [activeIndex, columns, minCellWidth]);
-	const mouseUp = useCallback(() => {
-		setActiveIndex(null);
-		removeListeners();
-// eslint-disable-next-line
-	}, [setActiveIndex]);
-
+	//удаление слушателей
 	const removeListeners = useCallback(() => {
 		window.removeEventListener('mousemove', mouseMove);
 		window.removeEventListener('mouseup', removeListeners);
 	}, [mouseMove]);
 
-
+	//список ключей для селекта
+	const searchKeysName=[
+		["firstName","Имя"],["lastName","Фамилия"],["maidenName","Отчетсво"],["age","Возраст"],["gender","Пол"],["phone","Телефон"],["address.address","Улица"],["address.city","Город"]
+	];
+	
 		return( 
 		<main>
+			<UserInfoPage user={userForInfoPage} active={activeInfoPage} setActive={setActiveInfoPage}/>
 			<div className="table-wrapper">
 				<table id="jsTable" ref={ tableElement }>
 					<thead>
@@ -95,7 +98,7 @@ const Table = () => {
 					<tbody>
 						{
 							users.map((user)=> (
-								<UserOutput key={user.id} user={user}/>
+								<UserOutput setUserForInfoPage={setUserForInfoPage} activeInfoPage={activeInfoPage} setActiveInfoPage={setActiveInfoPage} key={user.id} user={user}/>
 							))
 						}
 					</tbody>
