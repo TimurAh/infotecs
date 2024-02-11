@@ -14,16 +14,17 @@ header{
 	padding: 10px;
 	position:sticky;
     left: 0; top: 0; /* Левый верхний угол */
-	width: 100%;
-	z-index: 2;
+	z-index: 3;
+	min-width: 500px;
 } 
 footer{
 	background-color: black;
-	padding: 2px;
+	padding: 10px;
 	position:sticky;
 	z-index: 1;
     left: 0; bottom: 0; /* Левый нижний угол */
-	width: 100%;
+	z-index: 3;
+	min-width: 500px;
 }
 main{
 	padding: 10px;
@@ -37,13 +38,14 @@ main{
 	display: grid;
 	width: 100%;
 	max-width: 1200px;
+	min-width: 500px;
 	overflow: hidden;
 	grid-template-columns:
-    minmax(150px, 4fr)
-    minmax(150px, 1fr)
-    minmax(150px, 1fr)
-    minmax(150px, 2fr)
-    minmax(150px, 4fr);
+    minmax(90px, 6fr)
+    minmax(120px, 1fr)
+    minmax(70px, 1fr)
+    minmax(100px, 3fr)
+    minmax(100px, 6fr);
 
 }
 
