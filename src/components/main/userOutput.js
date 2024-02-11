@@ -4,7 +4,6 @@ class User extends React.Component {
 	user = this.props.user;
 	render(){
 		if(this.user!=null){
-			// console.log("User "+this.user.age)
 			return(
 			<tr>
 				<td>{this.user.lastName} {this.user.firstName} {this.user.maidenName}</td>
